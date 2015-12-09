@@ -1,0 +1,4 @@
+echo -n '89a888a6' | http GET localhost:8080 Content-Type:text/plain Accept:text/plain
+echo -n 'http://google.com' | http POST localhost:8080 Content-Type:text/plain Accept:text/plain
+echo -n '89a888a6' | http GET localhost:8080 Content-Type:text/plain Accept:text/plain
+echo -n 'a89a888a6' | http GET localhost:8080 Content-Type:text/plain Accept:text/plain
