@@ -2,6 +2,8 @@ package com.innoq.urls.api.web;
 
 import java.util.Optional;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ import com.innoq.urls.api.domain.HashService;
         produces = MediaType.TEXT_PLAIN_VALUE)
 public final class RootController {
 
+    private static final Logger LOGGER = LogManager.getLogger(RootController.class);
+
     private final HashService hashService;
 
     @Autowired
@@ -27,6 +31,7 @@ public final class RootController {
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> hash(@RequestBody String value) {
+        LOGGER.trace("hash({})", value);
         final String hash = hashService.hash(value);
         return ResponseEntity.ok(hash);
     }

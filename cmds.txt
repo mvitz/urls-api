@@ -3,3 +3,5 @@ echo -n 'http://google.com' | http POST localhost:8081 Content-Type:text/plain A
 http GET localhost:8081/89a888a6
 http GET localhost:8081/notfound
 
+echo -n 'http://google.com' | http POST localhost:8081 Content-Type:text/plain Accept:text/plain x-debug-enabled:true
+

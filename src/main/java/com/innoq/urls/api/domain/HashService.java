@@ -23,6 +23,7 @@ public final class HashService {
     }
 
     public String hash(String value) {
+        LOGGER.trace("hash({})", value);
         final String hash = hasher.hash(value);
         LOGGER.info("'{}' hashed as '{}'", value, hash);
         hashToValue.put(hash, value);
